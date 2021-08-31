@@ -4,8 +4,14 @@
   "description": "A MERN stack project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node server.js",
+    "start-server" : "nodemon server.js"
   },
   "author": "Chiranjit Dey",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.3",
+    "nodemon": "^2.0.12"
+  }
 }
