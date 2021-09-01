@@ -2,9 +2,14 @@ import React from 'react'
 import {FaUserAlt} from "react-icons/fa"
 import {MdMailOutline} from "react-icons/md"
 import { RiLockPasswordLine, RiLockPasswordFill } from "react-icons/ri";
+import "./SignUp.css"
 const SignUp = () => {
   return (
-    <form className="signup-form">
+    
+    <div className="signup-container row px-2 vh-100">
+    
+    <form className="signup-form col-md-5 mx-auto align-self-center">
+    <h1 className="heading">Please fill in your details</h1>
       {/*username */}
       <div className="form-group input-group mb-3">
         <div className = "input-group-prepend">
@@ -51,8 +56,9 @@ const SignUp = () => {
       </div>
 
       {/*Already have account */}
-      <p className="text-center text-white">Already have an account? <a href=" " className="">LogIn</a></p>
+      <p className="text-center text-black">Already have an account? <a href=" " className="">LogIn</a></p>
     </form>
+    </div>
   )
 }
 export default SignUp

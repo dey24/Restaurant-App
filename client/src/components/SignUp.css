@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap');
+.signup-container{
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.heading{
+    font-family: 'Hina Mincho', serif;
+}
