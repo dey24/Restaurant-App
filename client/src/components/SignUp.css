@@ -4,6 +4,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    max-height: 100vh;
+    margin-top:25vh;
 }
 
 .heading{

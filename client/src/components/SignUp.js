@@ -3,10 +3,24 @@ import {FaUserAlt} from "react-icons/fa"
 import {MdMailOutline} from "react-icons/md"
 import { RiLockPasswordLine, RiLockPasswordFill } from "react-icons/ri";
 import "./SignUp.css"
+import {Link} from "react-router-dom"
+import {useState} from "react"
+
 const SignUp = () => {
+  const[formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    password2: '',
+    successMsg: false,
+    errorMsg: false,
+    loading: false,
+  })
+
+  const {username, email, password, password2, successMsg, errorMsg, loading} = formData;
   return (
     
-    <div className="signup-container row px-2 vh-100">
+    <div className="signup-container row px-1">
     
     <form className="signup-form col-md-5 mx-auto align-self-center">
     <h1 className="heading">Please fill in your details</h1>
@@ -17,7 +31,7 @@ const SignUp = () => {
             <i><FaUserAlt /></i>
           </span>
         </div>
-        <input name = "" className="form-control" placeholder= 'Username' type="text"/>
+        <input name = "username" value = {username} className="form-control" placeholder= 'Username' type="text" onChange={handleChange}/>
       </div>
       {/*email*/}
       
@@ -27,7 +41,7 @@ const SignUp = () => {
             <i><MdMailOutline /></i>
           </span>
         </div>
-        <input name = "" className="form-control" placeholder= 'Email' type="email"/>
+        <input name = "email" value= {email} className="form-control" placeholder= 'Email' type="email" onChange={handleChange}/>
       </div>
       {/*password*/}
       
@@ -37,7 +51,7 @@ const SignUp = () => {
             <i><RiLockPasswordLine /></i>
           </span>
         </div>
-        <input name = "" className="form-control" placeholder= 'Password' type="password"/>
+        <input name = "password" value = {password} className="form-control" placeholder= 'Password' type="password" onChange={handleChange}/>
       </div>
 
       {/*confirm password*/}
@@ -47,7 +61,7 @@ const SignUp = () => {
             <i><RiLockPasswordFill /></i>
           </span>
         </div>
-        <input name = "" className="form-control" placeholder= 'Confirm password' type="password"/>
+        <input name = "password2" value = {password2} className="form-control" placeholder= 'Confirm password' type="password" onChange={handleChange}/>
       </div>
 
       {/*Create Account button */}
@@ -56,8 +70,10 @@ const SignUp = () => {
       </div>
 
       {/*Already have account */}
-      <p className="text-center text-black">Already have an account? <a href=" " className="">LogIn</a></p>
+      <p className="text-center text-black">Already have an account? <Link to="logIn" className="">LogIn</Link></p>
     </form>
+
+    <p>{JSON.stringify(formData)}</p>
     </div>
   )
 }
